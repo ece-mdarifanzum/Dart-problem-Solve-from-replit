@@ -1,12 +1,12 @@
-import 'dart:io';
+void main() {
+  List<int> a = [1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89];
 
-void main() {    
-    stdout.write("What's your name? ");
-    String name = stdin.readLineSync()!;
-
-    print("Hi, $name! What is your age?");
-    int age = int.parse(stdin.readLineSync()!);
-
-    int yearsToHunderd = 100 - age;
-    print("$name, You have $yearsToHunderd years to be 100");
+  for (var i in a) {
+    if (i < 5) {
+      print(i);
+    }
+  }
+  
+  // One liner
+  print([for (var i in a) if (i < 5) i]);
 }
