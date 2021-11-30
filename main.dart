@@ -1,12 +1,17 @@
-import 'dart:io';
+void main() {
+  List<int> a = [1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89];
+  List<int> b = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 89];
+  Set<int> c = {};
 
-void main() {    
-    stdout.write("What's your name? ");
-    String name = stdin.readLineSync()!;
+  for (var i in a) {
+    for (var j in b) {
+      if (i == j) {
+        c.add(i);
+      }
+    }
+  }
+  print(c.toList());
 
-    print("Hi, $name! What is your age?");
-    int age = int.parse(stdin.readLineSync()!);
-
-    int yearsToHunderd = 100 - age;
-    print("$name, You have $yearsToHunderd years to be 100");
+  // One liner using set intersections
+  print(Set.from(a).intersection(Set.from(b)).toList());
 }
